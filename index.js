@@ -1,13 +1,22 @@
-function hasTargetSum(array, target) {
-  // Write your algorithm here
+// function hasTargetSum(array, target) {
+//   // Write your algorithm here
+//   for(let i=0;i<array.length;i++){
+//     for(let j=i+1; j<array.length;j++){
+//       if(array[i]+array[j]===target){
+//         return true
+      
+//       }
+//     }
+//   }
+//   return false
+// }
+
+function hasTargetSum(array, target){
+  const seenNumbers={}
   for(let i=0;i<array.length;i++){
-    for(let j=0; j<array.length;j++){
-      if(i!==j){
-        if(array[i]+array[j]===target){
-          return true
-        }
-      }
-    }
+    const compliment = target-array[i]
+    if(seenNumbers[compliment]) return true
+    seenNumbers[array[i]]=true
   }
   return false
 }
@@ -19,9 +28,9 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
-  if pair in array add up to target:
-    return true
-  else return false
+  create an empty object keep track of the numbers we have seen 
+  iter array to find our compliment(target-array value)
+  if any of our values is a key in our object return true otherwise false 
 */
 
 /*
