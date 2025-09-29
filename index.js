@@ -1,3 +1,4 @@
+// runtime: O(n^2)
 // function hasTargetSum(array, target) {
 //   // Write your algorithm here
 //   for(let i=0;i<array.length;i++){
@@ -11,19 +12,20 @@
 //   return false
 // }
 
+// runtime: O(n)
 function hasTargetSum(array, target){
   const seenNumbers={}
-  for(let i=0;i<array.length;i++){
-    const compliment = target-array[i]
-    if(seenNumbers[compliment]) return true
-    seenNumbers[array[i]]=true
+  for(const number of array){
+    const compliment = target-number
+    if(compliment in seenNumbers) return true
+    seenNumbers[number]=true
   }
   return false
 }
 
 /* 
   Write the Big O time complexity of your function here
-  0(1)
+  O(1)
 */
 
 /* 
