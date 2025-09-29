@@ -23,14 +23,14 @@ function hasTargetSum(array, target){
 
 /* 
   Write the Big O time complexity of your function here
-  0(n^2)
+  0(1)
 */
 
 /* 
   Add your pseudocode here
   create an empty object keep track of the numbers we have seen 
   iter array to find our compliment(target-array value)
-  if any of our values is a key in our object return true otherwise false 
+  if any of our values is a key in our object return true otherwise add that number to our object
 */
 
 /*
